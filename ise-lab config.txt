@@ -1,5 +1,9 @@
 ise-lab.txt
 
+activate ers from CLI config app ise
+add Admin user: ers/ersM0
+
+
 NAD
 Name: HQ-SW
 IP Address:	10.10.2.3/32
