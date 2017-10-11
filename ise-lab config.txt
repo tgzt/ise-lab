@@ -30,8 +30,16 @@ Wired MAB   - use AD_Internal
 
 Policy > Results > Authorization > Downloadable ACLs
 domain computer dACL
+
 domain user dACL (full-access)
+permit udp any any eq domain
+permit udp any any eq bootps
+permit ip any any host 10.10.3.20
+
 printer dACL
+permit udp any any eq domain
+permit udp any any eq bootps
+permit ip any 10.10.0.0 0.0.255.255
 
 Policy > Results > Authorization > Authorization Profiles
 domain computer profile
