@@ -33,9 +33,20 @@ Wired MAB   - use AD_Internal
 
 Policy > Results > Authorization > Downloadable ACLs
 domain computer dACL AD is 10.10.3.20
+
+>>>>>>> 9282ac93eb53896aaa162b1bca90a6bb2b8eedd8
 domain user dACL (full-access)
+permit udp any any eq domain
+permit udp any any eq bootps
+permit ip any any host 10.10.3.20
+
 printer dACL
+<<<<<<< HEAD
  
+=======
+permit udp any any eq domain
+permit ip any 10.10.0.0 0.0.255.255
+>>>>>>> 9282ac93eb53896aaa162b1bca90a6bb2b8eedd8
 
 Policy > Results > Authorization > Authorization Profiles
 domain computer profile
