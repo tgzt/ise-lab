@@ -1,10 +1,12 @@
 ise-lab.txt
 
 activate ers from CLI config app ise
-add Admin user: ers/ersM0
+
+Administration > Admin Access > Administrators > Admin Users > Add
+add Admin user: ers/ersM0  Admin Group: ERS Admin
 
 
-NAD
+Define the switch as a NAD in Cisco ISE
 Name: HQ-SW
 IP Address:	10.10.2.3/32
 Device Type: IOS-SW
@@ -12,26 +14,28 @@ Location: HQ
 Authentication Settings: [X] Checked
 Shared Secret: radius-key
 
-AD
+Configure AD Domain and Store
 External Identity Sources
 IP Addr: 10.10.3.20
 Domain: secure-x.local
 
-Indentity Source Sequence
+Configure Identity Source Sequence
 AD, Internal Endpoints, Internal Users
 
 Add Employee-PC to AD
  implement Windows dot1x supplicant
  reboot 
+ login with secure-x/it1/cisco
 
 Policy > Authentication
 Wired Dot1X - use AD_Internal
 Wired MAB   - use AD_Internal
 
 Policy > Results > Authorization > Downloadable ACLs
-domain computer dACL
+domain computer dACL AD is 10.10.3.20
 domain user dACL (full-access)
 printer dACL
+ 
 
 Policy > Results > Authorization > Authorization Profiles
 domain computer profile
@@ -39,7 +43,7 @@ domain user profile
 printer profile
 
 
-
+!#############################################################
 HQ-SW:
 logging console debugging
 aaa new-model
